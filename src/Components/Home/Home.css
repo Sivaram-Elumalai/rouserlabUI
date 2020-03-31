@@ -1,0 +1,46 @@
+.block{
+    height:1300px;
+   
+    /* width: 100%;
+    background: blue;
+    position: absolute; top: 0; left: 0; */
+}
+.black{
+    background: black;
+}
+
+.floro{
+    background: rgb(204, 255, 0);
+}
+.pink{
+    background: #CEA5AD;
+    color: rgb(204, 255, 0);
+}
+.blue{
+    background: #70AABC;;
+}
+.block-letters{
+   margin-left: 32%;
+   margin-right: 31%;
+   margin-top: 42.2%;
+   animation: fadeIn 4s;
+}
+@keyframes fadeIn {
+    from{
+        opacity:0;
+
+    }
+    to{
+        opacity:1
+    }
+}
+.pink-letters{
+    margin-left: 10%;
+    margin-right: 31%;
+    padding-top: 5%;
+    font-size: 100px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder; 
+    
+    
+ }
