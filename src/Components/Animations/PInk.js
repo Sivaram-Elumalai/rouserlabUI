@@ -2,9 +2,13 @@ import React from 'react'
 
 function PInk() {
     return (
-        <div>
-            
-        </div>
+        <>
+            Rouser
+            <br/>
+            makes things
+            <br/>that make
+            <br/>you think. 
+        </>
     )
 }
 

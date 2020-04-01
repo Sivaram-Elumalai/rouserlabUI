@@ -1,35 +1,64 @@
-import React from 'react'
-import './Home.css'
-import letter from '../../assets/images/black letters.svg'
-import {useSpring, animated} from 'react-spring'
+import React ,{useState} from 'react'
+import './Home.css'  
 // import Loader from '../Loader/Loader'
+import Black from '../Animations/Black'
+import Pink from '../Animations/PInk'
+import Floro from '../Animations/floro'
+import Sidebarleft from '../Sidebar/Sidebarleft'
+import Toggle from '../Buttons/Toggle'
+
 
 function Home() {
-    const props = useSpring({opacity: 1, from: {opacity: 0.5}})
+    const [sidebarleftOpen, setSidebarleftOpen] = useState(false)
+    const [floroBlock, setfloroBlock] = useState("floro")
+
+    const openHandler = () =>{
+        if(!sidebarleftOpen){
+            setSidebarleftOpen(true)
+            setfloroBlock("floro-changed")
+        }else{
+            setSidebarleftOpen(false)
+            setfloroBlock("floro")
+        }
+    }
+
+    const sidebarCloseHandler = ()=>{
+        setSidebarleftOpen(false)
+    }
+    let sidebarleft
+    if( sidebarleftOpen)
+    {
+        sidebarleft = <Sidebarleft close={sidebarCloseHandler} sidebar={"sidebarleftopen"}/>
+    }
+
     return (
         <div>
             <div className="block black">
-                <div>
-                    <img src={letter} className="block-letters" style={props}></img>
-                </div>
+                <Black/>
             </div>
-            
+
             <div className="block pink">
-                <div class="row pink-letters">
-                    Rouser
-                    <br/>
-                    makes things
-                    <br/>that make
-                    <br/>you think. 
+                <div className="row pink-letters">
+                    <Pink/>
                 </div>
             </div>
+
             <div className="block blue">
 
             </div>
+
             <div className="block black">
-                <div>
-                
+
+            </div>
+
+            <div className='block '>
+                <div className={floroBlock}>
+                    {sidebarleft}
+                    <Toggle click={openHandler}></Toggle>
+                    <Floro></Floro>
                 </div>
+                
+
             </div>
         </div>
     )

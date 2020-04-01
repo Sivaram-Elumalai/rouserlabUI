@@ -11,6 +11,12 @@
 
 .floro{
     background: rgb(204, 255, 0);
+    color: black;
+}
+.floro-change{
+    background: rgb(204, 255, 0);
+    color: black;
+    margin-left:45% ;
 }
 .pink{
     background: #CEA5AD;
@@ -43,4 +49,53 @@
     font-weight: bolder; 
     
     
- }
+}
+ .sidebarleftopen{
+    /* height: 100%;
+	width: 45%;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #111;
+	opacity: .9;
+	overflow-x: hidden;
+	padding-top: 60px;
+	transition: 0.7s; */
+
+    height: 100%;
+    width: 45%;
+    background-color:black;
+    opacity: 1;
+    color: white;
+    position: fixed;
+    z-index: 200;
+	top: 0;
+	left: -100%;
+	overflow-x: hidden;
+    animation: slide-open 1s forwards;
+}
+@keyframes slide-open{
+    100%{
+        left: 0;
+    }
+}
+.sidebarleft .close {
+	position: absolute;
+	top: 0;
+	right: 22px;
+	float: right;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.sidebarleftclose{
+    left: 0;
+    animation:slide-close 1s forwards;
+}
+
+@keyframes slide-close{
+    100%{
+        left: -100%;
+    }
+}
